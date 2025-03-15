@@ -101,4 +101,6 @@ def upload_photos():
     return redirect("/")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    from waitress import serve  # Use production-ready server
+    serve(app, host="0.0.0.0", port=8080)
+
