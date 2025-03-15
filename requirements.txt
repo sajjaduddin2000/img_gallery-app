@@ -5,3 +5,4 @@ azure-mgmt-storage
 flask-wtf
 werkzeug
 requests
+cifs-utils
