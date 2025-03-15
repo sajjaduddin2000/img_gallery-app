@@ -3,6 +3,7 @@ from azure.storage.blob import BlobServiceClient, generate_blob_sas, BlobSasPerm
 from flask import Flask, request, redirect
 from datetime import datetime, timedelta
 from dotenv import load_dotenv
+import uvicorn
 
 # Load environment variables from .env
 load_dotenv()
@@ -101,6 +102,5 @@ def upload_photos():
     return redirect("/")
 
 if __name__ == "__main__":
-    from waitress import serve  # Use production-ready server
-    serve(app, host="0.0.0.0", port=8080)
+    uvicorn.run("main:app", host="0.0.0.0", port=8000)
 
